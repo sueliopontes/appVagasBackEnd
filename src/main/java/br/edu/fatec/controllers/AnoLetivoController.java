@@ -24,6 +24,7 @@ import br.edu.fatec.services.AnoLetivoService;
 
 @Transactional
 @RestController
+@CrossOrigin
 @RequestMapping(value = "/anoLetivo")
 public class AnoLetivoController {
 	

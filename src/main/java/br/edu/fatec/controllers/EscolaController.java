@@ -24,6 +24,7 @@ import br.edu.fatec.services.EscolaService;
 
 @Transactional
 @RestController
+@CrossOrigin
 @RequestMapping(value = "/escola")
 public class EscolaController {
 	

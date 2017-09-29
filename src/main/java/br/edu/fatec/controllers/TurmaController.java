@@ -28,6 +28,7 @@ import br.edu.fatec.view.TurmaView;
 
 @Transactional
 @RestController
+@CrossOrigin
 @RequestMapping(value = "/turma")
 public class TurmaController {
 	
