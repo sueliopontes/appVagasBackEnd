@@ -13,7 +13,6 @@
 
 -Banco de dados Postgresql
 
-# Padrão REST
 # Padrão MVC e Rest
 
 ## Running Locally
