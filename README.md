@@ -1,6 +1,6 @@
 # Projeto Fatec TG - App Vagas - Back-end
 
-# Tecnoligias utilizadas
+# Tecnologias utilizadas
 - Spring MVC 4.2.6
 - Spring Data 1.10.2.RELEASE
 - Spring Security 4.0.3.RELEASE
