@@ -1,6 +1,9 @@
 package br.edu.fatec.model;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -9,12 +12,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonView;
 
 import br.edu.fatec.view.TurmaView;
@@ -56,5 +61,10 @@ public class Turma implements Serializable {
 	@JoinColumn(name = "periodoId")
 	@JsonView({ TurmaView.Alternative.class })
 	private Periodo periodo;
+	
+	@OneToMany(fetch = FetchType.EAGER,mappedBy = "turma")
+	@XmlElement(name = "inscritos")
+	@JsonIgnore
+	private Set<Inscritos> inscritos = new HashSet<Inscritos>(0);
 
 }

@@ -13,8 +13,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -43,5 +45,10 @@ public class Aluno implements Serializable {
 
 	@Column(nullable = false, length = 60, name = "alunoDtNasc")
 	private String dataNascimento;	
+	
+	@OneToMany(fetch = FetchType.EAGER,mappedBy = "aluno")
+	@XmlElement(name = "inscritos")
+	@JsonIgnore
+	private Set<Inscritos> inscritos = new HashSet<Inscritos>(0);
 
 }
