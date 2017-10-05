@@ -24,7 +24,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "inscrito")
+@Table(name = "inscritos")
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Inscritos implements Serializable {
