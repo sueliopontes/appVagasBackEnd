@@ -26,7 +26,6 @@ import br.edu.fatec.services.EscolaService;
 @RestController
 @CrossOrigin
 @RequestMapping(value = "/escola")
-@PreAuthorize("isAuthenticated()")
 public class EscolaController {
 	
 	@Autowired
@@ -37,7 +36,9 @@ public class EscolaController {
 	}
 	
 	
+	
 	@RequestMapping(value="/findByAll")
+	@PreAuthorize("isAuthenticated()")
 	public ResponseEntity<Collection<Escola>> findByAll(){
 		return new ResponseEntity<Collection<Escola>>(escolaService.findByAll(),HttpStatus.OK);
 	}
