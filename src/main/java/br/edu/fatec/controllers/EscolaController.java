@@ -26,6 +26,7 @@ import br.edu.fatec.services.EscolaService;
 @RestController
 @CrossOrigin
 @RequestMapping(value = "/escola")
+@PreAuthorize("isAuthenticated()")
 public class EscolaController {
 	
 	@Autowired
