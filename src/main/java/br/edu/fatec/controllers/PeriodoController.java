@@ -24,7 +24,7 @@ import br.edu.fatec.services.PeriodoService;
 
 @Transactional
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RequestMapping(value = "/periodo")
 public class PeriodoController {
 	

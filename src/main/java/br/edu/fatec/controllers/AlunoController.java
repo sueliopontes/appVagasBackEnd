@@ -24,7 +24,7 @@ import br.edu.fatec.services.AlunoService;
 
 @Transactional
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RequestMapping(value = "/aluno")
 public class AlunoController {
 	

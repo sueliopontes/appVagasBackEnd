@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 
-@CrossOrigin
+@CrossOrigin(origins = "*", maxAge = 3600)
 @Controller
 public class IndexController {
 	

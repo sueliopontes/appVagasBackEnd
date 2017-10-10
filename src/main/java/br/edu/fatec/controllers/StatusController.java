@@ -21,7 +21,7 @@ import br.edu.fatec.services.StatusService;
 
 @Transactional
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RequestMapping(value = "/status")
 public class StatusController {
 	

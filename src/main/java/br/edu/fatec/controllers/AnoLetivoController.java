@@ -24,7 +24,7 @@ import br.edu.fatec.services.AnoLetivoService;
 
 @Transactional
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RequestMapping(value = "/anoLetivo")
 public class AnoLetivoController {
 	
