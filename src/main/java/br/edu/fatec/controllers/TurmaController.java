@@ -28,7 +28,7 @@ import br.edu.fatec.view.TurmaView;
 
 @Transactional
 @RestController
-@CrossOrigin(origins = "*", maxAge = 3600)
+
 @RequestMapping(value = "/turma")
 public class TurmaController {
 	

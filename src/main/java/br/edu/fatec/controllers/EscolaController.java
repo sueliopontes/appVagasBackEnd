@@ -24,7 +24,7 @@ import br.edu.fatec.services.EscolaService;
 
 @Transactional
 @RestController
-@CrossOrigin(origins = "*", maxAge = 3600)
+
 @RequestMapping(value = "/escola")
 public class EscolaController {
 	
