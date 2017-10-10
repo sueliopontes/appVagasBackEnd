@@ -35,7 +35,7 @@ public class AlunoController {
 		this.alunoService = alunoService;
 	}
 	
-	@PreAuthorize("isAuthenticated()")
+	
 	@RequestMapping(value="/findByAll")
 	public ResponseEntity<Collection<Aluno>> findByAll(){
 		return new ResponseEntity<Collection<Aluno>>(alunoService.findByAll(),HttpStatus.OK);

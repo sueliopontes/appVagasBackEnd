@@ -33,12 +33,9 @@ public class EscolaController {
 	
 	public void setEscolaService(EscolaService escolaService) {
 		this.escolaService = escolaService;
-	}
+	}	
 	
-	
-	
-	@RequestMapping(value="/findByAll")
-	@PreAuthorize("isAuthenticated()")
+	@RequestMapping(value="/findByAll")	
 	public ResponseEntity<Collection<Escola>> findByAll(){
 		return new ResponseEntity<Collection<Escola>>(escolaService.findByAll(),HttpStatus.OK);
 	}
