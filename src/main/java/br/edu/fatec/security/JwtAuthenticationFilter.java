@@ -30,6 +30,8 @@ public class JwtAuthenticationFilter extends GenericFilterBean {
                 Authentication credentials = new UsernamePasswordAuthenticationToken(usuario.getUsername(), usuario.getPassword(), usuario.getAuthorities());
                 SecurityContextHolder.getContext().setAuthentication(credentials);
             }
+            
+    
             chain.doFilter(request, response);
         }
         catch(Throwable t) {

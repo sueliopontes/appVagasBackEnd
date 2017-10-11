@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 @Configuration
 @EnableWebMvc
-public class WebConfig extends WebMvcConfigurerAdapter {
+public class WebSecurityConfig extends WebMvcConfigurerAdapter {
 
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
@@ -15,6 +15,8 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 			.allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD", "TRACE", "CONNECT")
 			.exposedHeaders("Token")
 			.maxAge(3600)
-			.allowedOrigins("*");
+			.allowedOrigins("*")
+			.allowCredentials(true)
+			.allowedHeaders("Content-Type"," Accept","X-Requested-With","Token");
 	}
 }
