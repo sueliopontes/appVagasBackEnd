@@ -14,6 +14,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.GenericFilterBean;
 import br.edu.fatec.model.Usuario;
+import br.edu.fatec.security.JwtUtils;
 
 public class JwtAuthenticationFilter extends GenericFilterBean {
 
@@ -26,23 +27,10 @@ public class JwtAuthenticationFilter extends GenericFilterBean {
             HttpServletRequest servletRequest = (HttpServletRequest) request;
             String authorization = servletRequest.getHeader(tokenHeader);
             if (authorization != null) {
-                Usuario usuario = JwtUtils.parseToken(authorization.replaceAll("Bearer ",""));
+                Usuario usuario = JwtUtils.parseToken(authorization.replaceAll("Bearer ", ""));
                 Authentication credentials = new UsernamePasswordAuthenticationToken(usuario.getUsername(), usuario.getPassword(), usuario.getAuthorities());
                 SecurityContextHolder.getContext().setAuthentication(credentials);
-            
-                HttpServletResponse res = (HttpServletResponse) response;
-
-                res.setHeader("Access-Control-Allow-Origin", "*");
-                res.setHeader("Access-Control-Allow-Credentials", "true");
-                res.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
-                res.setHeader("Access-Control-Max-Age", "3600");
-                res.setHeader("Access-Control-Allow-Headers", "Content-Type, Accept, X-Requested-With, Token");
-                res.setHeader("Access-Control-Expose-Headers", "Token");
-            
-            
             }
-            
-    
             chain.doFilter(request, response);
         }
         catch(Throwable t) {
