@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.security.access.prepost.PreAuthorize;
 
 import br.edu.fatec.model.Turma;
-@PreAuthorize("isAuthenticated()")
+
 public interface TurmaService {
 	public Turma save(Turma turma);
 
