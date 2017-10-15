@@ -21,6 +21,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/").permitAll()
                 .antMatchers(HttpMethod.POST, "/login").permitAll()      
                 .antMatchers(HttpMethod.GET, "/turma").permitAll()
+                .antMatchers(HttpMethod.OPTIONS, "/turma").permitAll()
                 .antMatchers(HttpMethod.GET, "/periodo").permitAll() 
                 .anyRequest().authenticated()
                 .and();
