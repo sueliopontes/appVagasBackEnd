@@ -30,6 +30,8 @@ public class LoginController {
         this.auth = auth;
     }
     
+    @CrossOrigin(methods= {RequestMethod.POST,RequestMethod.OPTIONS,RequestMethod.HEAD,RequestMethod.PATCH,RequestMethod.TRACE,
+			RequestMethod.GET,RequestMethod.DELETE,RequestMethod.PUT},origins="*",maxAge=3600,exposedHeaders= "Token")
     @RequestMapping(path = "", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public Usuario login(@RequestBody Login login, HttpServletResponse response) throws JsonProcessingException {
         Authentication credentials = new UsernamePasswordAuthenticationToken(login.getUsername(), login.getPassword());
