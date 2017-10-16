@@ -27,5 +27,8 @@
       <sec:password-encoder hash="md5"></sec:password-encoder>
     </sec:authentication-provider>
   </sec:authentication-manager>
+  
+  
+  
 
 </beans:beans>
