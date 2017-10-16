@@ -18,7 +18,7 @@ import br.edu.fatec.security.JwtUtils;
 
 public class JwtAuthenticationFilter extends GenericFilterBean {
 
-    private String tokenHeader = "Authorization";
+    private String tokenHeader = "Token";
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
