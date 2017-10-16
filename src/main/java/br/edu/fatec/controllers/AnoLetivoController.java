@@ -35,7 +35,8 @@ public class AnoLetivoController {
 		this.anoLetivoService = anoLetivoService;
 	}
 	
-	
+	@CrossOrigin(methods= {RequestMethod.POST,RequestMethod.OPTIONS,RequestMethod.HEAD,RequestMethod.PATCH,RequestMethod.TRACE,
+			RequestMethod.GET,RequestMethod.DELETE,RequestMethod.PUT},origins="*",maxAge=3600)
 	@RequestMapping(value="/findByAll")
 	public ResponseEntity<Collection<Ano>> findByAll(){
 		return new ResponseEntity<Collection<Ano>>(anoLetivoService.findByAll(),HttpStatus.OK);

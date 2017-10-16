@@ -36,7 +36,8 @@ public class EscolaController {
 	}	
 	
 	@RequestMapping(value="/findByAll")	
-	@CrossOrigin(origins="*",value="*",exposedHeaders={"Token"},maxAge=3600,methods={RequestMethod.GET,RequestMethod.POST})
+	@CrossOrigin(methods= {RequestMethod.POST,RequestMethod.OPTIONS,RequestMethod.HEAD,RequestMethod.PATCH,RequestMethod.TRACE,
+			RequestMethod.GET,RequestMethod.DELETE,RequestMethod.PUT},origins="*",maxAge=3600)
 	public ResponseEntity<Collection<Escola>> findByAll(){
 		return new ResponseEntity<Collection<Escola>>(escolaService.findByAll(),HttpStatus.OK);
 	}

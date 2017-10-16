@@ -39,7 +39,8 @@ public class TurmaController {
 		this.turmaService = turmaService;
 	}
 	
-	
+	@CrossOrigin(methods= {RequestMethod.POST,RequestMethod.OPTIONS,RequestMethod.HEAD,RequestMethod.PATCH,RequestMethod.TRACE,
+			RequestMethod.GET,RequestMethod.DELETE,RequestMethod.PUT},origins="*",maxAge=3600)
 	@RequestMapping(value="/findByAll")
 	@JsonView({TurmaView.Alternative.class})
 	public ResponseEntity<Collection<Turma>> findByAll(){

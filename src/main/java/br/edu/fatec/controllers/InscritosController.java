@@ -37,7 +37,8 @@ public class InscritosController {
 	public void setInscritosService(InscritosService inscritosService) {
 		this.inscritosService = inscritosService;
 	}
-
+	@CrossOrigin(methods= {RequestMethod.POST,RequestMethod.OPTIONS,RequestMethod.HEAD,RequestMethod.PATCH,RequestMethod.TRACE,
+			RequestMethod.GET,RequestMethod.DELETE,RequestMethod.PUT},origins="*",maxAge=3600)
 	@RequestMapping(value = "/findByAll")
 	public ResponseEntity<Collection<Inscritos>> findByAll() {
 		return new ResponseEntity<Collection<Inscritos>>(inscritosService.findByAll(), HttpStatus.OK);

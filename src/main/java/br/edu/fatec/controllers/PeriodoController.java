@@ -35,7 +35,8 @@ public class PeriodoController {
 		this.periodoService = periodoService;
 	}
 	
-	
+	@CrossOrigin(methods= {RequestMethod.POST,RequestMethod.OPTIONS,RequestMethod.HEAD,RequestMethod.PATCH,RequestMethod.TRACE,
+			RequestMethod.GET,RequestMethod.DELETE,RequestMethod.PUT},origins="*",maxAge=3600)
 	@RequestMapping(value="/findByAll")
 	public ResponseEntity<Collection<Periodo>> findByAll(){
 		return new ResponseEntity<Collection<Periodo>>(periodoService.findByAll(),HttpStatus.OK);
