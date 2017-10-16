@@ -26,7 +26,7 @@ import br.edu.fatec.services.AlunoService;
 @Transactional
 @RestController
 @CrossOrigin(methods= {RequestMethod.POST,RequestMethod.OPTIONS,
-		RequestMethod.GET,RequestMethod.DELETE,RequestMethod.PUT})
+		RequestMethod.GET,RequestMethod.DELETE,RequestMethod.PUT},origins="*")
 @RequestMapping(value = "/aluno")
 public class AlunoController {
 	
