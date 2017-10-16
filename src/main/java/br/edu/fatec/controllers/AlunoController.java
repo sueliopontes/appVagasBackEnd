@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +25,8 @@ import br.edu.fatec.services.AlunoService;
 
 @Transactional
 @RestController
-
+@CrossOrigin(methods= {RequestMethod.POST,RequestMethod.OPTIONS,
+		RequestMethod.GET,RequestMethod.DELETE,RequestMethod.PUT})
 @RequestMapping(value = "/aluno")
 public class AlunoController {
 	
