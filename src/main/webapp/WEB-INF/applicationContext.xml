@@ -62,7 +62,7 @@
 	<mvc:cors>
 
 		<mvc:mapping path="/**" allowed-origins="*"
-			allowed-methods="GET, PUT,OPTIONS, POST" allowed-headers="Token"
+			allowed-methods="GET, PUT,OPTIONS, POST" allowed-headers="authorization"
 			exposed-headers="Token" allow-credentials="false" max-age="123" />
 
 
