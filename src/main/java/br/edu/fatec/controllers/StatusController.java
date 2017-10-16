@@ -21,7 +21,7 @@ import br.edu.fatec.services.StatusService;
 
 @Transactional
 @RestController
-
+@CrossOrigin
 @RequestMapping(value = "/status")
 public class StatusController {
 	

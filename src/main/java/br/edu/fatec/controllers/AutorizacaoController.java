@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.edu.fatec.model.Autorizacao;
 import br.edu.fatec.services.AutorizacaoService;
-
+@CrossOrigin
 @RestController
 public class AutorizacaoController {
 	

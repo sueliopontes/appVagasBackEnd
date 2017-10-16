@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import br.edu.fatec.model.Aluno;
 import br.edu.fatec.services.AlunoService;
-
+@CrossOrigin
 @Transactional
 @RestController
 @RequestMapping(value = "/aluno")

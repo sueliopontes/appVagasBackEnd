@@ -28,7 +28,7 @@ import br.edu.fatec.view.InscritoView;
 
 @Transactional
 @RestController
-
+@CrossOrigin
 @RequestMapping(value = "/inscritos")
 public class InscritosController {
 	@Autowired

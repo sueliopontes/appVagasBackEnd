@@ -18,7 +18,7 @@ import br.edu.fatec.security.JwtUtils;
 import br.edu.fatec.security.Login;
 
 @RestController
-
+@CrossOrigin
 @RequestMapping(value = "/login")
 public class LoginController {
     

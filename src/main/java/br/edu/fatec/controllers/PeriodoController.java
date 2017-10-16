@@ -24,7 +24,7 @@ import br.edu.fatec.services.PeriodoService;
 
 @Transactional
 @RestController
-
+@CrossOrigin
 @RequestMapping(value = "/periodo")
 public class PeriodoController {
 	
