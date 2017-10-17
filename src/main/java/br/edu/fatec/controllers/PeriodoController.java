@@ -34,7 +34,7 @@ public class PeriodoController {
 	public void setPeriodoService(PeriodoService periodoService) {
 		this.periodoService = periodoService;
 	}
-	
+	@PreAuthorize("hasRole('ROLE_USUARIO')")
 	@CrossOrigin(methods= {RequestMethod.POST,RequestMethod.OPTIONS,RequestMethod.HEAD,RequestMethod.PATCH,RequestMethod.TRACE,
 			RequestMethod.GET,RequestMethod.DELETE,RequestMethod.PUT},origins="*",maxAge=3600)
 	@RequestMapping(value="/findByAll")

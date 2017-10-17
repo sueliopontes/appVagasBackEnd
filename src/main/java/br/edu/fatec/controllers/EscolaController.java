@@ -34,7 +34,7 @@ public class EscolaController {
 	public void setEscolaService(EscolaService escolaService) {
 		this.escolaService = escolaService;
 	}	
-	
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@RequestMapping(value="/findByAll")	
 	@CrossOrigin(methods= {RequestMethod.POST,RequestMethod.OPTIONS,RequestMethod.HEAD,RequestMethod.PATCH,RequestMethod.TRACE,
 			RequestMethod.GET,RequestMethod.DELETE,RequestMethod.PUT},origins="*",maxAge=3600)
