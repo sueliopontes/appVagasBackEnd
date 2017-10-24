@@ -26,14 +26,14 @@ public class AutorizacaoController {
 	}
 	
 	@RequestMapping(value = "/autorizacao/{nome}")
-	@PreAuthorize("isAuthenticated()")
+	//@PreAuthorize("isAuthenticated()")
 	public ResponseEntity<Collection<Autorizacao>> pesquisar(@PathVariable("nome") String nome) {
 		return new ResponseEntity<Collection<Autorizacao>>(autorizacaoService.buscar(nome), HttpStatus.OK);
 	}
 	@CrossOrigin(methods= {RequestMethod.POST,RequestMethod.OPTIONS,RequestMethod.HEAD,RequestMethod.PATCH,RequestMethod.TRACE,
 			RequestMethod.GET,RequestMethod.DELETE,RequestMethod.PUT},origins="*",maxAge=3600)
 	@RequestMapping(value = "/autorizacao/getAll")
-	@PreAuthorize("hasRole('ROLE_ADMIN')")
+	//@PreAuthorize("hasRole('ROLE_ADMIN')")
 	public ResponseEntity<Collection<Autorizacao>> getAll() {
 		return new ResponseEntity<Collection<Autorizacao>>(autorizacaoService.todos(), HttpStatus.OK);
 	}

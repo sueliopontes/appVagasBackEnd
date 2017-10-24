@@ -38,7 +38,7 @@ public class AlunoController {
 	@CrossOrigin(methods= {RequestMethod.POST,RequestMethod.OPTIONS,RequestMethod.HEAD,RequestMethod.PATCH,RequestMethod.TRACE,
 			RequestMethod.GET,RequestMethod.DELETE,RequestMethod.PUT},origins="*",maxAge=3600)
 	@RequestMapping(value="/findByAll")
-	@PreAuthorize("isAuthenticated()")
+	//@PreAuthorize("isAuthenticated()")
 	public ResponseEntity<Collection<Aluno>> findByAll(){
 		return new ResponseEntity<Collection<Aluno>>(alunoService.findByAll(),HttpStatus.OK);
 	}
