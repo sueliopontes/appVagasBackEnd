@@ -61,7 +61,7 @@ public class InscritosController {
 		return new ResponseEntity(HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/findByEscola")
+	@RequestMapping(value = "/findByEscola/{id}")
 	public ResponseEntity findByEscola(@PathVariable("id") Integer id) {
 		inscritosService.findByEscola(id);
 		return new ResponseEntity(HttpStatus.OK);
