@@ -60,6 +60,12 @@ public class InscritosController {
 		inscritosService.deleteByAll();
 		return new ResponseEntity(HttpStatus.OK);
 	}
+	
+	@RequestMapping(value = "/findByEscola")
+	public ResponseEntity findByEscola(@PathVariable("id") Integer id) {
+		inscritosService.findByEscola(id);
+		return new ResponseEntity(HttpStatus.OK);
+	}
 
 	@RequestMapping(value = "/save", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.CREATED)

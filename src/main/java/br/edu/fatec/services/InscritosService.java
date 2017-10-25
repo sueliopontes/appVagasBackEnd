@@ -16,5 +16,7 @@ public interface InscritosService {
 	public Inscritos findById(Integer id);
 
 	public List<Inscritos> findByAll();
+	
+	public List<Inscritos> findByEscola(Integer id);
 
 }
