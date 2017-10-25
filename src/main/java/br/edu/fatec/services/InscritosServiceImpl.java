@@ -69,9 +69,9 @@ public class InscritosServiceImpl implements InscritosService{
 	public List<Inscritos> findByEscola(Integer id) {
 		List<Inscritos> inscritos=new ArrayList<Inscritos>();
 		for (Inscritos inscrito: this.inscritosRepository.findAll()) {
-			if (inscrito.getTurma().getEscola().getEscolaId()==id){
+			//if (inscrito.getTurma().getEscola().getEscolaId()==id){
 				inscritos.add(inscrito);
-			}
+			//}
 		}
 		return inscritos;
 	}
