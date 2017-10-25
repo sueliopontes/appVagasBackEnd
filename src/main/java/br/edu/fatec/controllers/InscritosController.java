@@ -48,6 +48,12 @@ public class InscritosController {
 	public ResponseEntity<Inscritos> findById(@PathVariable("id") Integer id) {
 		return new ResponseEntity<Inscritos>(inscritosService.findById(id), HttpStatus.OK);
 	}
+	
+	@RequestMapping(value = "/findByEscola/{id}")
+	public ResponseEntity <Collection<Inscritos>> findByEscola(@PathVariable("id") Integer id) {		
+		return new ResponseEntity <Collection<Inscritos>>(inscritosService.findByEscola(id),HttpStatus.OK);
+	}
+
 
 	@RequestMapping(value = "/deleteById/{id}")
 	public ResponseEntity deleteById(@PathVariable("id") Integer id) {
@@ -61,12 +67,7 @@ public class InscritosController {
 		return new ResponseEntity(HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/findByEscola/{id}")
-	public ResponseEntity findByEscola(@PathVariable("id") Integer id) {
-		inscritosService.findByEscola(id);
-		return new ResponseEntity(HttpStatus.OK);
-	}
-
+	
 	@RequestMapping(value = "/save", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.CREATED)
 	public Inscritos save(@RequestBody Inscritos inscritos, HttpServletRequest request, HttpServletResponse response) {
