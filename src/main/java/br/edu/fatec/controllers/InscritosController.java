@@ -49,8 +49,7 @@ public class InscritosController {
 		return new ResponseEntity<Inscritos>(inscritosService.findById(id), HttpStatus.OK);
 	}
 	
-	@CrossOrigin(methods= {RequestMethod.POST,RequestMethod.OPTIONS,RequestMethod.HEAD,RequestMethod.PATCH,RequestMethod.TRACE,
-			RequestMethod.GET,RequestMethod.DELETE,RequestMethod.PUT},origins="*",maxAge=3600)
+	@CrossOrigin
 	@RequestMapping(value = "/findByEscola/{id}")
 	public ResponseEntity <Collection<Inscritos>> findByEscola(@PathVariable("id") Integer id) {		
 		return new ResponseEntity <Collection<Inscritos>>(inscritosService.findByEscola(id),HttpStatus.OK);
