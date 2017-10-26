@@ -41,7 +41,7 @@ public class Escola implements Serializable {
 	@JsonView({TurmaView.Alternative.class})
 	private int escolaId;
 
-	@Column(nullable = false, length = 60, name = "escolaNome")
+	@Column(nullable = false, length = 100, name = "escolaNome")
 	@JsonView({TurmaView.Alternative.class})
 	private String escolaNome;
 
